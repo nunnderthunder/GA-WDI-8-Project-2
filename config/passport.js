@@ -2,7 +2,7 @@
 var LocalStrategy    = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy  = require('passport-twitter').Strategy;
-var GoogleStrategy   = require('passport-google-oauth').OAuth2Strategy;
+/* var GoogleStrategy   = require('passport-google-oauth').OAuth2Strategy; */
 
 // load up the user model
 var User       = require('../app/models/user');
@@ -12,9 +12,8 @@ var configAuth = require('./auth'); // use this one for testing
 
 module.exports = function(passport) {
 
-    // =========================================================================
+    
     // passport session setup ==================================================
-    // =========================================================================
     // required for persistent login sessions
     // passport needs ability to serialize and unserialize users out of session
 
@@ -30,9 +29,7 @@ module.exports = function(passport) {
         });
     });
 
-    // =========================================================================
     // LOCAL LOGIN =============================================================
-    // =========================================================================
     passport.use('local-login', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
@@ -63,9 +60,7 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
     // LOCAL SIGNUP ============================================================
-    // =========================================================================
     passport.use('local-signup', new LocalStrategy({
         // by default, local strategy uses username and password, we will override with email
         usernameField : 'email',
@@ -121,9 +116,7 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
     // FACEBOOK ================================================================
-    // =========================================================================
     passport.use(new FacebookStrategy({
 
         clientID        : configAuth.facebookAuth.clientID,
@@ -197,9 +190,7 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
     // TWITTER =================================================================
-    // =========================================================================
     passport.use(new TwitterStrategy({
 
         consumerKey     : configAuth.twitterAuth.consumerKey,
@@ -272,9 +263,7 @@ module.exports = function(passport) {
 
     }));
 
-    // =========================================================================
-    // GOOGLE ==================================================================
-    // =========================================================================
+/*    // GOOGLE =================================================================
     passport.use(new GoogleStrategy({
 
         clientID        : configAuth.googleAuth.clientID,
@@ -347,5 +336,5 @@ module.exports = function(passport) {
         });
 
     }));
-
+    */
 };

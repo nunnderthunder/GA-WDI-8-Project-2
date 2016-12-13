@@ -4,7 +4,7 @@ module.exports = {
 	'facebookAuth' : {
 		'clientID' 		: '1774955509434506', // your App ID
 		'clientSecret' 	: '710bfc95aa36eb3030e0e4855c20e143', // your App Secret
-		'callbackURL' 	: 'http://localhost:8080/auth/facebook/callback'
+		'callbackURL' 	: 'http://127.0.0.1:8080/auth/facebook/callback'
 	},
 
 	'twitterAuth' : {
@@ -13,10 +13,10 @@ module.exports = {
 		'callbackURL' 		: 'http://127.0.0.1:8080/auth/twitter/callback'
 	},
 
-	'googleAuth' : {
+/*
 		'clientID' 		: 'your-secret-clientID-here',
 		'clientSecret' 	: 'your-client-secret-here',
 		'callbackURL' 	: 'http://localhost:8080/auth/google/callback'
 	}
-
+*/
 };

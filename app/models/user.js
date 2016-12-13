@@ -20,13 +20,13 @@ var userSchema = mongoose.Schema({
         token        : String,
         displayName  : String,
         username     : String
-    },
-    google           : {
+    }
+   /* google           : {
         id           : String,
         token        : String,
         email        : String,
         name         : String
-    }
+    } */
 
 });
 

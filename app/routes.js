@@ -73,7 +73,7 @@ module.exports = function(app, passport) {
 			}));
 
 
-	// google ---------------------------------
+/*	// google ---------------------------------
 
 		// send to google to do the authentication
 		app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
@@ -84,6 +84,7 @@ module.exports = function(app, passport) {
 				successRedirect : '/profile',
 				failureRedirect : '/'
 			}));
+			*/
 
 // AUTHORIZE (ALREADY LOGGED IN / CONNECTING OTHER SOCIAL ACCOUNT) =============
 	// locally --------------------------------
@@ -121,7 +122,7 @@ module.exports = function(app, passport) {
 			}));
 
 
-	// google ---------------------------------
+/*	// google ---------------------------------
 
 		// send to google to do the authentication
 		app.get('/connect/google', passport.authorize('google', { scope : ['profile', 'email'] }));
@@ -132,6 +133,7 @@ module.exports = function(app, passport) {
 				successRedirect : '/profile',
 				failureRedirect : '/'
 			}));
+			*/
 
 
 // UNLINK ACCOUNTS =============================================================
@@ -167,7 +169,7 @@ module.exports = function(app, passport) {
 		});
 	});
 
-	// google ---------------------------------
+/*	// google ---------------------------------
 	app.get('/unlink/google', function(req, res) {
 		var user          = req.user;
 		user.google.token = undefined;
@@ -175,7 +177,7 @@ module.exports = function(app, passport) {
 			res.redirect('/profile');
 		});
 	});
-
+*/
 
 };
 
