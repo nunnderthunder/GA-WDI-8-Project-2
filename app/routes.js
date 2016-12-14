@@ -25,6 +25,11 @@ module.exports = function(app, passport) {
 		res.render('blog.ejs');
 	});
 
+	// ABOUT ME =============================
+	app.get('about', function(req, res){
+		res.render('about.ejs');
+	});
+
 
 // AUTHENTICATE (FIRST LOGIN) ==================================================
 	// locally --------------------------------
