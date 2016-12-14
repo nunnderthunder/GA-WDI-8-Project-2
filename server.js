@@ -19,6 +19,13 @@ var configDB = require('./config/database.js');
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 
+// enable cross origin requests
+app.use(function(req, res, next) {
+  req.header("Access-Control-Allow-Origin", "*");
+  req.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
@@ -28,6 +35,7 @@ app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
+
 
 // required for passport
 app.use(session({ secret: 'Makin too much money!'}));

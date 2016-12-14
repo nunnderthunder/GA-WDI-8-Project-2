@@ -20,6 +20,12 @@ module.exports = function(app, passport) {
 		res.redirect('/');
 	});
 
+	// BLOG SECTION ==========================
+	app.get('/blog', function(req, res){
+		res.render('blog.ejs');
+	});
+
+
 // AUTHENTICATE (FIRST LOGIN) ==================================================
 	// locally --------------------------------
 		// LOGIN ===============================
@@ -42,11 +48,15 @@ module.exports = function(app, passport) {
 		});
 
 		// process the signup form
-		app.post('/signup', passport.authenticate('local-signup', {
-			successRedirect : '/profile', // redirect to the secure profile section
-			failureRedirect : '/signup', // redirect back to the signup page if there is an error
-			failureFlash : true // allow flash messages
-		}));
+		app.post('/signup', function(req, res, next) {
+			console.log('about to signup:', req.body);
+			let signupStrategy = passport.authenticate('local-signup', {
+				successRedirect : '/profile', // redirect to the secure profile section
+				failureRedirect : '/signup', // redirect back to the signup page if there is an error
+				failureFlash : true // allow flash messages
+			});
+			return signupStrategy(req, res, next);
+		});
 
 	// facebook -------------------------------
 

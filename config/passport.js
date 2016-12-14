@@ -95,6 +95,9 @@ module.exports = function(passport) {
                         return done(null, user);
                     });
                 } 
+
+                //One account with a Restricted Page
+                
                 //  We're not logged in, so we're creating a brand new user.
                 else {
                     // create the user
@@ -116,6 +119,7 @@ module.exports = function(passport) {
 
     }));
 
+    
     // FACEBOOK ================================================================
     passport.use(new FacebookStrategy({
 
