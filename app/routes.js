@@ -26,9 +26,17 @@ module.exports = function(app, passport) {
 	});
 
 	// ABOUT ME =============================
-	app.get('about', function(req, res){
+	app.get('/about', function(req, res){
 		res.render('about.ejs');
 	});
+
+	//CONTACT ===============================
+	app.get('/contact', function(req, res){
+		res.render('contact.ejs');
+	});
+	
+	//POST for submitting an e-mail via contact page
+	
 
 
 // AUTHENTICATE (FIRST LOGIN) ==================================================

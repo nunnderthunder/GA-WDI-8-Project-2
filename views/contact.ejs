@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+   <head>
+      <title>User Account</title>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+      <style>
+         #contactus {
+         text-align: center;
+         }
+         h1 {
+         text-align: center;
+         }
+      </style>
+   </head>
+   <body>
+      <nav id="header" class="navbar navbar-inverse">
+         <div id="header-container" class="container navbar-container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <a id="brand" class="navbar-brand" href="#">Daniels Daily</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+               <ul class="nav navbar-nav">
+                  <li><a href="/profile">Account</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li class="active"><a href="/contact">Contact</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+               </ul>
+            </div>
+            <!-- /.nav-collapse -->
+         </div>
+         <!-- /.container -->
+      </nav>
+      <!-- /.navbar -->
+      <h1>
+      Contact Form</hi>
+      <br>
+      <br>
+      <div class ="content">
+         <form action='/contact', name='contactus', id='contactus', method='post'>
+         <fieldset>
+            <p>
+               <label for="name">Name: </label>
+               <br>
+               <input name ="name" type="text" value='' id="name"></input>
+            </p>
+            <p>
+               <label for="email">Email: </label>
+               <br>
+               <input name ="email" type="text" value='' id="email"></input>
+            </p>
+            <p>
+               <label for="message">Message: </label>
+               <br>
+               <textarea name="message" cols="40" rows="10" id="message"></textarea>
+            </p>
+            <p>
+               <input name ="submit" type="submit" value='Send' id="submit"></input>
+            </p>
+         </fieldset>
+         </form> 
+      </div>
+      <div class="panel-footer">
+         <span class="label label-default">If the form fails please send all questions to radaniels@bellsouth.net</span> 
+      </div>
+   </body>
+</html>
